@@ -7,6 +7,7 @@ def code_hash(key)
   }
   code[key]
 end
+
 def decode(morse_code)
   morse_code.split('   ').each do |word|
     word.split.each do |char|
@@ -16,4 +17,3 @@ def decode(morse_code)
   end
 end
 decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
-
