@@ -8,12 +8,17 @@ def code_hash(key)
   code[key]
 end
 
+def single_word(morse_word)
+  msg_word = ''
+  morse_word.split.each do |char|
+    msg_word += code_hash(char)
+  end
+  msg_word += ' '
+end
+
 def decode(morse_code)
   morse_code.split('   ').each do |word|
-    word.split.each do |char|
-      print code_hash(char)
-    end
-    print ' '
+    print single_word(word)
   end
 end
 decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
